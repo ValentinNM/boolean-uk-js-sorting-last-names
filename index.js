@@ -43,23 +43,31 @@ console.log("This is the Uppercassed array: " + lastNameUC);
 
 // This is the sorted array: lastName =[Marcora , Mason , Mocanu]
 
-for (let i = 3; i < lastName.length; i++) {
+for (let i = 0; i < lastName.length; i++) {
   const myLastNamePosition = lastName[i];
-//   console.log("line 45 -> myLastNamePosition is:" + myLastNamePosition)
-  if (myLastNamePosition == 'Mocanu') {
-    // const positionOfMyName = myLastNamePosition;
-    console.log(`This is the position of my last name: ${myLastNamePosition}`);
+  //   console.log("line 45 -> myLastNamePosition is:" + myLastNamePosition)
+  if (myLastNamePosition === "Mocanu") {
+    const positionOfMyName = i + 1;
+    console.log(`This is the position of my last name: ${positionOfMyName}`);
   }
 }
 
+//  Solution for grouping arrrays // 
 
+const groupedLastName = lastName.concat(lastNameUC);
+console.log("This is the grouped list of names: " + groupedLastName);
 
+groupedLastName.sort();
+console.log("this is the grouped one sortded: " + groupedLastName);
 
+newFunction();
 
+function newFunction() {
+  const result = [];
+  for (let i = 0, n = lastName.length; i + 1 < n; i += 2) {
+    result.push([lastName[i], lastName[i + 1]]);
+    console.log("This is the result: " + result);
+  }
+}
 
-//   if (i == "Mocanu") {
-//     console.log("this is my last name: " + i);
-//   }
-//   console.log(`me is: me[${i}]`);
-//   console.log("Current element: ", lastName[i]);
-// }
+//   End of solution // 
